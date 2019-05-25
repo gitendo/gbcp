@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 		<!-- Custom styles for this template -->
-		<style type="text/css">
+		<style>
 			.even {background-color: rgba(255, 255, 255, 0) !important;}
 			.odd {background-color: rgba(0, 0, 0, 0.05);}
 		</style>
@@ -23,7 +23,7 @@
 
 	<body>
 
-		<main role="main" class="container">
+		<main class="container">
 
 			<div class="starter-template">
 				<h1 class="my-3">Game Boy Compression Playground</h1>
@@ -47,7 +47,7 @@
 					</thead>
 					<tbody>
 						<tr class="table-warning">
-							<td class="align-middle pl-2" rowspan="3" scope="rowgroup">Raw data</td>
+							<td class="align-middle pl-2" rowspan="3">Raw data</td>
 							<td>360</td>
 							<td>100%</td>
 							<td>14452</td>
@@ -67,7 +67,7 @@
 							<td>14452</td>
 						</tr>
 						<tr>
-							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">C64Pack v1.0</a></td>
+							<td class="align-middle pl-2" rowspan="3"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">C64Pack v1.0</a></td>
 							<td>162</td>
 							<td>45%</td>
 							<td>48644</td>
@@ -87,7 +87,7 @@
 							<td>69380</td>
 						</tr>
 						<tr>
-							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="http://www.devrs.com/gb/software.php#compress">GB Compress v1.4</a></td>
+							<td class="align-middle pl-2" rowspan="3"><a href="http://www.devrs.com/gb/software.php#compress">GB Compress v1.4</a></td>
 							<td>222</td>
 							<td>61.66%</td>
 							<td class="text-success">17064</td>
@@ -107,7 +107,7 @@
 							<td class="text-success">12544</td>
 						</tr>
 						<tr>
-							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href=""></a>gb-lzss</td>
+							<td class="align-middle pl-2" rowspan="3"><a href=""></a>gb-lzss</td>
 							<td>196</td>
 							<td>54.44%</td>
 							<td>27068</td>
@@ -127,7 +127,7 @@
 							<td>-</td>
 						</tr>
 						<tr>
-							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="https://github.com/romhack/kirbyLzRle">HAL Laboratory compression</a></td>
+							<td class="align-middle pl-2" rowspan="3"><a href="https://github.com/romhack/kirbyLzRle">HAL Laboratory compression</a></td>
 							<td>193</td>
 							<td>53.61%</td>
 							<td>42712</td>
@@ -147,7 +147,7 @@
 							<td>42244</td>
 						</tr>
 						<tr>
-							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="https://gist.github.com/slembcke/229ca5e17f78ecac1ade9c8efd5ff485">LZ4</a></td>
+							<td class="align-middle pl-2" rowspan="3"><a href="https://gist.github.com/slembcke/229ca5e17f78ecac1ade9c8efd5ff485">LZ4</a></td>
 							<td class="text-danger">242</td>
 							<td class="text-danger">67.22%</td>
 							<td>36572</td>
@@ -167,7 +167,7 @@
 							<td>24200</td>
 						</tr>
 						<tr>
-							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="https://github.com/gitendo/lz4gb">LZ4GB</a></td>
+							<td class="align-middle pl-2" rowspan="3"><a href="https://github.com/gitendo/lz4gb">LZ4GB</a></td>
 							<td>221</td>
 							<td>61.38%</td>
 							<td>26240</td>
@@ -187,7 +187,7 @@
 							<td>16676</td>
 						</tr>
 						<tr>
-							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">PuCrunch</a></td>
+							<td class="align-middle pl-2" rowspan="3"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">PuCrunch</a></td>
 							<td class="text-success">160</td>
 							<td class="text-success">44.44%</td>
 							<td>125976</td>
@@ -207,7 +207,7 @@
 							<td>228392</td>
 						</tr>
 						<tr>
-							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">RNC (method 1)</a></td>
+							<td class="align-middle pl-2" rowspan="3"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">RNC (method 1)</a></td>
 							<td>173</td>
 							<td>48.05%</td>
 							<td class="text-danger">464760</td>
@@ -227,7 +227,7 @@
 							<td class="text-danger">244172</td>
 						</tr>
 						<tr>
-							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">RNC (method 2)</a></td>
+							<td class="align-middle pl-2" rowspan="3"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">RNC (method 2)</a></td>
 							<td>183</td>
 							<td>50.83%</td>
 							<td>31520</td>
@@ -247,7 +247,7 @@
 							<td>-</td>
 						</tr>
 						<tr>
-							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="https://github.com/jbrandwood/SWD32">SWD32</a></td>
+							<td class="align-middle pl-2" rowspan="3"><a href="https://github.com/jbrandwood/SWD32">SWD32</a></td>
 							<td>169</td>
 							<td>46.94%</td>
 							<td>55652</td>
