@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Detailed information related to Game Boy compression methods.">
+		<meta name="author" content="tmk">
+		<link rel="icon" href="../../../../favicon.ico">
+
+		<title>Game Boy Compression Playground</title>
+
+		<link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/starter-template/">
+
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<!-- Custom styles for this template -->
+		<style type="text/css">
+			.even {background-color: rgba(255, 255, 255) !important;}
+			.odd {background-color: rgba(0, 0, 0, 0.05);}
+		</style>
+	</head>
+
+	<body>
+
+		<main role="main" class="container">
+
+			<div class="starter-template">
+				<h1 class="my-3">Game Boy Compression Playground</h1>
+				<img class="float-left mr-2 mt-2" src="cenotaph.gif" alt="Cenotaph" title="Picture by Thug">
+				<p class="lead mb-1">Meet <a href="http://www.pouet.net/prod.php?which=59139">Cenotaph</a>! My testing subject for comparision presented below.</p>
+				<p>Besides visual quality this picture presents quite good data sample for compression tests. After processing it with <a href="https://github.com/gitendo/bmp2cgb">bmp2cgb</a> I ended up with usual attribute, tile and map files. Each file has its own characteristics. Attributes contain repeating strings, tiles have a bit of everything and map is the toughest nut, containing mostly unique bytes. Each file has been packed and then unpacked in emulated environment to count exact amount of cycles used. I've also included information about unpacker size, memory usage and possible file size reduction by striping obsolete header data where possible. Results are as follows:</p>
+			</div>
+			<div>
+				<table class="table table-sm table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th class="pl-2" scope="col" data-toggle="tooltip" data-placement="top" title="Tools used for comparision.">Method</th>
+							<th class="" scope="col" data-toggle="tooltip" data-placement="top" title="Packed data size in bytes.">Size</th>
+							<th class="" scope="col" data-toggle="tooltip" data-placement="top" title="Less is better.">Ratio</th>
+							<th class="" scope="col" data-toggle="tooltip" data-placement="top" title="Total number of cycles used to unpack the data.">Cycles</th>
+							<th class="text-center" scope="col" data-toggle="tooltip" data-placement="top" title="Procedure size in bytes.">Unpacker</th>
+							<th class="text-center" scope="col" data-toggle="tooltip" data-placement="top" title="Unpacker RAM usage in bytes.">RAM</th>
+							<th class="text-center" scope="col" data-toggle="tooltip" data-placement="top" title="Unpacker HRAM usage in bytes.">HRAM</th>
+							<th class="text-center" scope="col" data-toggle="tooltip" data-placement="top" title="Obsolete bytes that could be removed from packed data.">Header</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="table-warning">
+							<td class="align-middle pl-2" rowspan="3" scope="rowgroup">Raw data</td>
+							<td>360</td>
+							<td>100%</td>
+							<td>14452</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+						</tr>
+						<tr class="table-warning">
+							<td>4000</td>
+							<td>100%</td>
+							<td>160220</td>
+						</tr>
+						<tr class="table-warning">
+							<td>360</td>
+							<td>100%</td>
+							<td>14452</td>
+						</tr>
+						<tr>
+							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">C64Pack v1.0</a></td>
+							<td>162</td>
+							<td>45%</td>
+							<td>48644</td>
+							<td class="align-middle text-center" rowspan="3">349</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">9</td>
+							<td class="align-middle text-center" rowspan="3">1</td>
+						</tr>
+						<tr class="even">
+							<td>3185</td>
+							<td>79.62%</td>
+							<td>772608</td>
+						</tr>
+						<tr>
+							<td>332</td>
+							<td>92.22%</td>
+							<td>69380</td>
+						</tr>
+						<tr>
+							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="http://www.devrs.com/gb/software.php#compress">GB Compress v1.4</a></td>
+							<td>222</td>
+							<td>61.66%</td>
+							<td class="text-success">17064</td>
+							<td class="align-middle text-center" rowspan="3">250</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+						</tr>
+						<tr class="odd">
+							<td>3448</td>
+							<td>86.20%</td>
+							<td class="text-success">160608</td>
+						</tr>
+						<tr>
+							<td>339</td>
+							<td>94.16%</td>
+							<td class="text-success">12544</td>
+						</tr>
+						<tr>
+							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href=""></a>gb-lzss</td>
+							<td>196</td>
+							<td>54.44%</td>
+							<td>27068</td>
+							<td class="align-middle text-center text-success" rowspan="3">44</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">1</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+						</tr>
+						<tr class="even">
+							<td class="text-danger">3575</td>
+							<td class="text-danger">89.37%</td>
+							<td>289296</td>
+						</tr>
+						<tr>
+							<td>372</td>
+							<td>103.33%</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="https://github.com/romhack/kirbyLzRle">HAL Laboratory compression</a></td>
+							<td>193</td>
+							<td>53.61%</td>
+							<td>42712</td>
+							<td class="align-middle text-center" rowspan="3">202</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">2</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+						</tr>
+						<tr class="odd">
+							<td>3305</td>
+							<td>82.65%</td>
+							<td>517160</td>
+						</tr>
+						<tr>
+							<td class="text-success">122</td>
+							<td class="text-success">33.88%</td>
+							<td>42244</td>
+						</tr>
+						<tr>
+							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="https://gist.github.com/slembcke/229ca5e17f78ecac1ade9c8efd5ff485">LZ4</a></td>
+							<td class="text-danger">242</td>
+							<td class="text-danger">67.22%</td>
+							<td>36572</td>
+							<td class="align-middle text-center" rowspan="3">77</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">3</td>
+							<td class="align-middle text-center" rowspan="3">11</td>
+						</tr>
+						<tr class="even">
+							<td>3388</td>
+							<td>84.70%</td>
+							<td>317852</td>
+						</tr>
+						<tr>
+							<td>359</td>
+							<td>99.72%</td>
+							<td>24200</td>
+						</tr>
+						<tr>
+							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="https://github.com/gitendo/lz4gb">LZ4GB</a></td>
+							<td>221</td>
+							<td>61.38%</td>
+							<td>26240</td>
+							<td class="align-middle text-center" rowspan="3">78</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+						</tr>
+						<tr class="odd">
+							<td>3370</td>
+							<td>84.25%</td>
+							<td>223964</td>
+						</tr>
+						<tr>
+							<td>342</td>
+							<td>95%</td>
+							<td>16676</td>
+						</tr>
+						<tr>
+							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">PuCrunch</a></td>
+							<td class="text-success">160</td>
+							<td class="text-success">44.44%</td>
+							<td>125976</td>
+							<td class="align-middle text-center" rowspan="3">428</td>
+							<td class="align-middle text-center" rowspan="3">43</td>
+							<td class="align-middle text-center" rowspan="3">1</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+						</tr>
+						<tr class="even">
+							<td>3083</td>
+							<td>77.07%</td>
+							<td>2267160</td>
+						</tr>
+						<tr class="even">
+							<td>335</td>
+							<td>93.05%</td>
+							<td>228392</td>
+						</tr>
+						<tr>
+							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">RNC (method 1)</a></td>
+							<td>173</td>
+							<td>48.05%</td>
+							<td class="text-danger">464760</td>
+							<td class="align-middle text-center text-danger" rowspan="3">1033</td>
+							<td class="align-middle text-center text-danger" rowspan="3">400</td>
+							<td class="align-middle text-center text-danger" rowspan="3">30</td>
+							<td class="align-middle text-center" rowspan="3">17</td>
+						</tr>
+						<tr class="odd">
+							<td class="text-success">3062</td>
+							<td class="text-success">76.55%</td>
+							<td class="text-danger">3257216</td>
+						</tr>
+						<tr>
+							<td>354</td>
+							<td>98.33%</td>
+							<td class="text-danger">244172</td>
+						</tr>
+						<tr>
+							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">RNC (method 2)</a></td>
+							<td>183</td>
+							<td>50.83%</td>
+							<td>31520</td>
+							<td class="align-middle text-center" rowspan="3">228</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">18</td>
+						</tr>
+						<tr class="even">
+							<td>3160</td>
+							<td>79%</td>
+							<td>303212</td>
+						</tr>
+						<tr>
+							<td>360</td>
+							<td>100%</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td class="align-middle pl-2" rowspan="3" scope="rowgroup"><a href="https://github.com/jbrandwood/SWD32">SWD32</a></td>
+							<td>169</td>
+							<td>46.94%</td>
+							<td>55652</td>
+							<td class="align-middle text-center" rowspan="3">231</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">12</td>
+						</tr>
+						<tr class="odd">
+							<td>3219</td>
+							<td>80.47%</td>
+							<td>488228</td>
+						</tr>
+						<tr>
+							<td class="text-danger">374</td>
+							<td class="text-danger">103.88%</td>
+							<td>-</td>
+						</tr>
+					</tbody>
+					<tfoot class="thead-dark">
+						<tr>
+							<th colspan="8">&nbsp;</th>
+						</tr>
+					</tfoot>
+				</table>
+				<p>As you can see there's no clear winner. Compression was always about speed vs. size and it's no different here. RNC method 1 does the best job packing tile data but unoptimized unpacker is slowest, largest and needs a lot of RAM. PuCrunch is second being 21 bytes behind but wins when it comes to attributes file. Then we have C64Pack, just 2 bytes behind PuCrunch. Map file was too much for gb-lzss, RNC method 2 and SWD32 which failed miserably. Surprisingly kirbyLzRle, which uses mixed LZ-RLE based on HAL Laboratory packer, wins hand down here. GB Compress wins honorable mention being the fastest - apparently unpacking map file is faster than copying it usual way!</p>
+				<div class="card">
+					<div class="card-body text-center">
+						If you have any packer(s) not listed here why not letting me know? :)
+					</div>
+				</div>
+				<br>
+			</div>
+
+		</main><!-- /.container -->
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script>
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip()
+			})
+		</script>
+	</body>
+</html>
