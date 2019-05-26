@@ -29,7 +29,7 @@
 				<h1 class="my-3">Game Boy Compression Playground</h1>
 				<img class="float-left mr-2 mt-2" src="cenotaph.gif" alt="Cenotaph" title="Picture by Thug">
 				<p class="lead mb-1">Meet <a href="http://www.pouet.net/prod.php?which=59139">Cenotaph</a>! My testing subject for comparision presented below.</p>
-				<p>Besides visual quality this picture presents quite good data sample for compression tests. After processing it with <a href="https://github.com/gitendo/bmp2cgb">bmp2cgb</a> I ended up with usual attribute, tile and map files. Each file has its own characteristics. Attributes contain repeating strings, tiles have a bit of everything and map is the toughest nut, containing mostly unique bytes. Each file has been packed and then unpacked in emulated environment to count exact amount of cycles used. I've also included information about unpacker size, memory usage and possible file size reduction by striping obsolete header data where possible. Results are as follows:</p>
+				<p>Besides visual quality this picture presents quite good data sample for compression tests. After processing it with <a href="https://github.com/gitendo/bmp2cgb">bmp2cgb</a> I ended up with usual <a href="files/cenotaph.atr">attribute</a>, <a href="files/cenotaph.chr">tile</a> and <a href="files/cenotaph.map">map</a> files. Each file has its own characteristics. Attributes contain repeating strings, tiles have a bit of everything and map is the toughest nut, containing mostly unique bytes. Each file has been packed and then unpacked in emulated environment to count exact amount of cycles used. I've also included information about unpacker size, memory usage and possible file size reduction by striping obsolete header data where possible. Results are as follows:</p>
 			</div>
 			<div>
 				<table class="table table-sm table-striped">
@@ -273,10 +273,10 @@
 						</tr>
 					</tfoot>
 				</table>
-				<p>As you can see there's no clear winner. Compression was always about speed vs. size and it's no different here. RNC method 1 does the best job packing tile data but unoptimized unpacker is slowest, largest and needs a lot of RAM. PuCrunch is second being 21 bytes behind but wins when it comes to attributes file. Then we have C64Pack, just 2 bytes behind PuCrunch. Map file was too much for gb-lzss, RNC method 2 and SWD32 which failed miserably. Surprisingly kirbyLzRle, which uses mixed LZ-RLE based on HAL Laboratory packer, wins hand down here. GB Compress wins honorable mention being the fastest - apparently unpacking map file is faster than copying it usual way!</p>
+				<p>As you can see there's no clear winner. Compression was always about speed vs. size and it's no different here. RNC method 1 does the best job packing tile data but unoptimized unpacker is slowest, largest and needs a lot of RAM. PuCrunch is second being 21 bytes behind but wins when it comes to attributes file. Then we have C64Pack, just 2 bytes behind PuCrunch. Map file was too much for gb-lzss, RNC method 2 and SWD32 which failed miserably. Surprisingly kirbyLzRle, which uses mixed LZ-RLE based on HAL Laboratory packer, wins hand down here. GB Compress wins honorable mention being the fastest - apparently unpacking map file is faster than copying it usual way! 😲</p>
 				<div class="card">
 					<div class="card-body text-center">
-						If you have any packer(s) not listed here why not <a href="https://github.com/gitendo">letting me know</a>? :)
+						If you have any packer(s) not listed here why not letting me know at <a href="https://github.com/gitendo">&#116;&#109;&#107;&#064;&#116;&#117;&#116;&#097;&#046;&#105;&#111;</a>? :)
 					</div>
 				</div>
 				<br>
