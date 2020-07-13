@@ -67,6 +67,26 @@
 							<td>14452</td>
 						</tr>
 						<tr>
+							<td class="align-middle pl-2" rowspan="3"><a href="https://github.com/untoxa/UnaPACK.GBZ80">aPack</a></td>
+							<td class="text-success">152</td>
+							<td class="text-success">42.22%</td>
+							<td>77252</td>
+							<td class="align-middle text-center" rowspan="3">227</td>
+							<td class="align-middle text-center" rowspan="3">-</td>
+							<td class="align-middle text-center" rowspan="3">4</td>
+							<td class="align-middle text-center" rowspan="3">24</td>
+						</tr>
+						<tr class="even">
+							<td>3090</td>
+							<td>77.25%</td>
+							<td>947216</td>
+						</tr>
+						<tr>
+							<td>344</td>
+							<td>95.55%</td>
+							<td>71272</td>
+						</tr>
+						<tr>
 							<td class="align-middle pl-2" rowspan="3"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">C64Pack v1.0</a></td>
 							<td>162</td>
 							<td>45%</td>
@@ -76,7 +96,7 @@
 							<td class="align-middle text-center" rowspan="3">9</td>
 							<td class="align-middle text-center" rowspan="3">1</td>
 						</tr>
-						<tr class="even">
+						<tr class="odd">
 							<td>3185</td>
 							<td>79.62%</td>
 							<td>772608</td>
@@ -96,7 +116,7 @@
 							<td class="align-middle text-center" rowspan="3">-</td>
 							<td class="align-middle text-center" rowspan="3">-</td>
 						</tr>
-						<tr class="odd">
+						<tr class="even">
 							<td>3448</td>
 							<td>86.20%</td>
 							<td class="text-success">160608</td>
@@ -116,7 +136,7 @@
 							<td class="align-middle text-center" rowspan="3">1</td>
 							<td class="align-middle text-center" rowspan="3">-</td>
 						</tr>
-						<tr class="even">
+						<tr class="odd">
 							<td class="text-danger">3575</td>
 							<td class="text-danger">89.37%</td>
 							<td>289296</td>
@@ -136,7 +156,7 @@
 							<td class="align-middle text-center" rowspan="3">2</td>
 							<td class="align-middle text-center" rowspan="3">-</td>
 						</tr>
-						<tr class="odd">
+						<tr class="even">
 							<td>3305</td>
 							<td>82.65%</td>
 							<td>517160</td>
@@ -156,7 +176,7 @@
 							<td class="align-middle text-center" rowspan="3">3</td>
 							<td class="align-middle text-center" rowspan="3">11</td>
 						</tr>
-						<tr class="even">
+						<tr class="odd">
 							<td>3388</td>
 							<td>84.70%</td>
 							<td>317852</td>
@@ -176,7 +196,7 @@
 							<td class="align-middle text-center" rowspan="3">-</td>
 							<td class="align-middle text-center" rowspan="3">-</td>
 						</tr>
-						<tr class="odd">
+						<tr class="even">
 							<td>3370</td>
 							<td>84.25%</td>
 							<td>223964</td>
@@ -188,20 +208,20 @@
 						</tr>
 						<tr>
 							<td class="align-middle pl-2" rowspan="3"><a href="http://www.devrs.com/gb/asmcode.php#asmcomp">PuCrunch</a></td>
-							<td class="text-success">160</td>
-							<td class="text-success">44.44%</td>
+							<td>160</td>
+							<td>44.44%</td>
 							<td>125976</td>
 							<td class="align-middle text-center" rowspan="3">428</td>
 							<td class="align-middle text-center" rowspan="3">43</td>
 							<td class="align-middle text-center" rowspan="3">1</td>
 							<td class="align-middle text-center" rowspan="3">-</td>
 						</tr>
-						<tr class="even">
+						<tr class="odd">
 							<td>3083</td>
 							<td>77.07%</td>
 							<td>2267160</td>
 						</tr>
-						<tr class="even">
+						<tr>
 							<td>335</td>
 							<td>93.05%</td>
 							<td>228392</td>
@@ -216,7 +236,7 @@
 							<td class="align-middle text-center text-danger" rowspan="3">30</td>
 							<td class="align-middle text-center" rowspan="3">17</td>
 						</tr>
-						<tr class="odd">
+						<tr class="even">
 							<td class="text-success">3062</td>
 							<td class="text-success">76.55%</td>
 							<td class="text-danger">3257216</td>
@@ -236,7 +256,7 @@
 							<td class="align-middle text-center" rowspan="3">-</td>
 							<td class="align-middle text-center" rowspan="3">18</td>
 						</tr>
-						<tr class="even">
+						<tr class="odd">
 							<td>3160</td>
 							<td>79%</td>
 							<td>303212</td>
@@ -256,7 +276,7 @@
 							<td class="align-middle text-center" rowspan="3">-</td>
 							<td class="align-middle text-center" rowspan="3">12</td>
 						</tr>
-						<tr class="odd">
+						<tr class="even">
 							<td>3219</td>
 							<td>80.47%</td>
 							<td>488228</td>
@@ -273,7 +293,8 @@
 						</tr>
 					</tfoot>
 				</table>
-				<p>As you can see there's no clear winner. Compression was always about speed vs. size and it's no different here. RNC method 1 does the best job packing tile data but unoptimized unpacker is slowest, largest and needs a lot of RAM. PuCrunch is second being 21 bytes behind but wins when it comes to attributes file. Then we have C64Pack, just 2 bytes behind PuCrunch. Map file was too much for gb-lzss, RNC method 2 and SWD32 which failed miserably. Surprisingly kirbyLzRle, which uses mixed LZ-RLE based on HAL Laboratory packer, wins hand down here. GB Compress wins honorable mention being the fastest - apparently unpacking map file is faster than copying it usual way! 😲</p>
+				<p><em>13 Jul 2020:</em><br>aPack unpacker added. PuCrunch loses its place.</p>
+				<p><em>26 May 2019:</em><br>As you can see there's no clear winner. Compression was always about speed vs. size and it's no different here. RNC method 1 does the best job packing tile data but unoptimized unpacker is slowest, largest and needs a lot of RAM. PuCrunch is second being 21 bytes behind but wins when it comes to attributes file. Then we have C64Pack, just 2 bytes behind PuCrunch. Map file was too much for gb-lzss, RNC method 2 and SWD32 which failed miserably. Surprisingly kirbyLzRle, which uses mixed LZ-RLE based on HAL Laboratory packer, wins hand down here. GB Compress wins honorable mention being the fastest - apparently unpacking map file is faster than copying it usual way! 😲</p>
 				<div class="card">
 					<div class="card-body text-center">
 						If you have any packer(s) not listed here why not letting me know at <a href="https://github.com/gitendo">&#116;&#109;&#107;&#064;&#116;&#117;&#116;&#097;&#046;&#105;&#111;</a>? :)
