@@ -1,5 +1,6 @@
 ; resourced by tmk
 ; visit Game Boy Compression Playground at https://github.com/gitendo/gbcp for more
+; this one is exactly the same as in Kirby's Star Stacker (USA, Europe) (SGB Enhanced).gb
 
 ; these should be located in HRAM
 byte_CF00:
