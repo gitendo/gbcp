@@ -1,5 +1,9 @@
 [
 	{
+		"date" : "July 8th, 2021",
+		"text" : "Added Capcom's LZSS variant used in both Mega Man Xtreme games. I've fixed and cleaned ocean1's code since it failed to compress cenotaph.map properly, also resourced unpacker code."
+	},
+	{
 		"date" : "June 15th, 2021",
 		"text" : "Added LZSA1 and LZSA2 decompression routines by meltycode. Updated aPACK results with apultra by Emmanuel Marty. Enabled changelog navigation."
 	},

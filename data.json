@@ -77,7 +77,7 @@
 	{
 		"method" : "Capcom",
 		"url" : {
-			"bin" : "https://github.com/ocean1/mmx_hackpack",
+			"bin" : "https://github.com/gitendo/gbcp/tree/master/capcom/",
 			"src" : "https://github.com/gitendo/gbcp/tree/master/capcom/"
 		},
 		"atr" : {
@@ -86,14 +86,14 @@
 		},
 		"chr" : {
 			"size" : 3396,
-			"cycles" : 195604
+			"cycles" : 195924
 		},
 		"map" : {
-			"size" : 336,
-			"cycles" : 
+			"size" : 340,
+			"cycles" : 15908
 		},
 		"unpacker" : {
-			"size" : 349,
+			"size" : 34,
 			"ram" : "-",
 			"hram" : "-",
 			"header" : "-"
