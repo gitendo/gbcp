@@ -1,7 +1,0 @@
-this compression routine is based on jens ch. restermeier's work
-and was written by sam nova <novalicious@eircom.net>.
-the original version was written for rgbds assembler, but
-i <vhelin@cc.hut.fi> converted it to use wla's syntax.
-
-you can get the original gbcomp.zip from here
-www.novalicious.com
